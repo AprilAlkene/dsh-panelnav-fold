@@ -1,0 +1,29 @@
+{
+  "name": "dsh-panelnav-fold",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Collapse/expand the DeepSeek Harness sidebar panel navigation list (插件 … MCP 连接器) from one row at the sidebar foot.",
+  "keywords": ["dsh", "dsh-plugin", "deepseek-harness", "sidebar"],
+  "license": "MIT",
+  "author": "AprilAlkene",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AprilAlkene/dsh-panelnav-fold.git"
+  },
+  "homepage": "https://github.com/AprilAlkene/dsh-panelnav-fold#readme",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": ["index.js", "client.js", "cordis.patch.yml", "locale/*.json"],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-slots", "@deepseek-ai/dsh-client-locale"]
+    }
+  }
+}
