@@ -20,20 +20,26 @@
 
 ## 安装
 
-方式一，Git 地址（推荐）：
+方式一，Desktop 界面（最省事）：设置 → 内置插件 → 添加插件，在输入框里填
 
-```bash
-dsh plugin add https://github.com/AprilAlkene/dsh-panelnav-fold
+```
+https://github.com/AprilAlkene/dsh-panelnav-fold
 ```
 
-也可以在 Desktop 的 设置 → 内置插件 → 添加插件 里，把上面这个 Git 地址填进输入框。
+方式二，命令行（`dsh plugin` 会把参数转给 pnpm，所以用 pnpm 的 Git 写法）：
 
-方式二，本地目录：
+```bash
+dsh plugin add github:AprilAlkene/dsh-panelnav-fold
+```
+
+方式三，本地目录：
 
 ```bash
 git clone https://github.com/AprilAlkene/dsh-panelnav-fold
 dsh plugin add "$PWD/dsh-panelnav-fold"
 ```
+
+> `dsh plugin <args>` 是 `pnpm <args>` 的转发，`--profile <name>` 指定装到哪个 profile。想在 Web 端也用，就再对 `web` profile 装一次。
 
 插件按 profile 安装（Desktop 与 `dsh web` 各装一次）。装完刷新页面，侧栏底部就多出那一行。卸载：设置 → 内置插件 里删掉 `panelnav-fold`。
 
@@ -60,4 +66,4 @@ MIT
 
 ---
 
-A tiny DeepSeek Harness plugin: fold the sidebar's global panel list to one row at the sidebar foot, 200 ms height transition, state remembered in `localStorage`. Install with `dsh plugin add <this repo's git URL>`.
+A tiny DeepSeek Harness plugin: fold the sidebar's global panel list to one row at the sidebar foot, 200 ms height transition, state remembered in `localStorage`. Install from the Add Plugin dialog with this repo's URL, or `dsh plugin add github:AprilAlkene/dsh-panelnav-fold`.
